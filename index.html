@@ -1,71 +1,175 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>3D Heart VR</title>
-    <style>
-      body { margin: 0; overflow: hidden; }
-      canvas { display: block; }
-    </style>
-  </head>
-  <body>
-    <script type="module">
-      import * as THREE from "https://unpkg.com/three@0.153.0/build/three.module.js";
-      import { VRButton } from "https://unpkg.com/three@0.153.0/examples/jsm/webxr/VRButton.js";
+<head>
+  <meta charset="utf-8" />
+  <title>3D Heart + Love Text</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    html,body { height:100%; margin:0; overflow:hidden; background:#111; }
+    #info {
+      position: absolute; left: 10px; top: 10px; color: #fff;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      z-index: 2; background: rgba(0,0,0,0.35); padding:8px 12px; border-radius:8px;
+    }
+    a { color: #ff99cc }
+  </style>
+</head>
+<body>
+  <div id="info">3D Heart — Enter VR to see surprise ❤️</div>
 
-      // Scene
-      const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x000000);
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.153.0/build/three.module.js';
+    import { OrbitControls } from 'https://unpkg.com/three@0.153.0/examples/jsm/controls/OrbitControls.js';
+    import { VRButton } from 'https://unpkg.com/three@0.153.0/examples/jsm/webxr/VRButton.js';
+    import { FontLoader } from 'https://unpkg.com/three@0.153.0/examples/jsm/loaders/FontLoader.js';
+    import { TextGeometry } from 'https://unpkg.com/three@0.153.0/examples/jsm/geometries/TextGeometry.js';
 
-      // Camera
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-      camera.position.z = 3;
+    // Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.xr.enabled = true;
+    document.body.appendChild(renderer.domElement);
 
-      // Renderer
-      const renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.xr.enabled = true;
-      document.body.appendChild(renderer.domElement);
-      document.body.appendChild(VRButton.createButton(renderer));
+    // Scene + Camera
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x0b0b0f);
 
-      // Heart shape
-      const x = 0, y = 0;
-      const heartShape = new THREE.Shape();
-      heartShape.moveTo(x + 0.25, y + 0.25);
-      heartShape.bezierCurveTo(x + 0.25, y + 0.25, x, y, x - 0.25, y);
-      heartShape.bezierCurveTo(x - 0.5, y, x - 0.5, y + 0.35, x - 0.5, y + 0.35);
-      heartShape.bezierCurveTo(x - 0.5, y + 0.6, x - 0.3, y + 0.8, x, y + 1);
-      heartShape.bezierCurveTo(x + 0.3, y + 0.8, x + 0.5, y + 0.6, x + 0.5, y + 0.35);
-      heartShape.bezierCurveTo(x + 0.5, y + 0.35, x + 0.5, y, x + 0.25, y + 0.25);
+    const camera = new THREE.PerspectiveCamera(70, window.innerWidth/window.innerHeight, 0.1, 100);
+    camera.position.set(0, 1.6, 0);   // VR eye level
+    camera.lookAt(0, 1.2, -3);
 
-      const extrudeSettings = { depth: 0.3, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 0.05, bevelThickness: 0.05 };
-      const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
-      const material = new THREE.MeshPhongMaterial({ color: 0xff3366, shininess: 100 });
-      const heart = new THREE.Mesh(geometry, material);
-      heart.rotation.x = Math.PI; // upright
-      scene.add(heart);
+    // Lights
+    scene.add(new THREE.HemisphereLight(0xffeebb, 0x080820, 0.8));
+    const dir = new THREE.DirectionalLight(0xffffff, 1.0);
+    dir.position.set(5, 10, 7.5);
+    scene.add(dir);
 
-      // Lights
-      const light1 = new THREE.PointLight(0xffffff, 1);
-      light1.position.set(5, 5, 5);
-      scene.add(light1);
-      scene.add(new THREE.AmbientLight(0x404040));
+    // Ground
+    const ground = new THREE.Mesh(
+      new THREE.PlaneGeometry(30, 30),
+      new THREE.MeshStandardMaterial({ color: 0x06060a, roughness: 1, metalness: 0 })
+    );
+    ground.rotation.x = -Math.PI/2;
+    ground.position.y = -1.3;
+    scene.add(ground);
 
-      // Animation
-      function animate() {
-        heart.rotation.y += 0.01;
-        renderer.setAnimationLoop(() => {
-          renderer.render(scene, camera);
-        });
+    // Heart shape
+    function makeHeartShape(scale=1.0) {
+      const x = t => 16*Math.pow(Math.sin(t),3);
+      const y = t => 13*Math.cos(t) - 5*Math.cos(2*t) - 2*Math.cos(3*t) - Math.cos(4*t);
+      const shape = new THREE.Shape();
+      const pts = [];
+      const steps = 120;
+      for (let i=0;i<=steps;i++){
+        const t = i/steps * Math.PI * 2;
+        pts.push(new THREE.Vector2(x(t)*scale*0.02, y(t)*scale*0.02));
       }
-      animate();
+      shape.moveTo(pts[0].x, pts[0].y);
+      for (let i=1;i<pts.length;i++) shape.lineTo(pts[i].x, pts[i].y);
+      return shape;
+    }
 
-      // Resize handling
-      window.addEventListener("resize", () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+    const heartShape = makeHeartShape(1.0);
+    const extrudeSettings = { depth: 0.4, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.06, bevelSegments: 6 };
+    const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
+    geometry.center();
+
+    const material = new THREE.MeshStandardMaterial({
+      color: 0xff3d6b,
+      metalness: 0.2,
+      roughness: 0.35,
+      emissive: 0x220011,
+      emissiveIntensity: 0.08,
+    });
+
+    const heart = new THREE.Mesh(geometry, material);
+    const rim = new THREE.Mesh(geometry.clone(), new THREE.MeshStandardMaterial({
+      color: 0xff8fb0,
+      emissive: 0xff6f9b,
+      emissiveIntensity: 0.12,
+      roughness: 1.0,
+      metalness: 0,
+      transparent: true,
+      opacity: 0.25,
+      depthWrite: false,
+    }));
+
+    rim.scale.set(1.03,1.03,1.03);
+
+    const group = new THREE.Group();
+    group.add(heart);
+    group.add(rim);
+    group.position.set(0, 1.2, -3);   // in front of viewer
+    scene.add(group);
+
+    // Lights accents
+    const p1 = new THREE.PointLight(0xff7aa1, 0.6, 5.0);
+    p1.position.set(-1.5, 1.5, 1);
+    scene.add(p1);
+    const p2 = new THREE.PointLight(0xffb3c8, 0.4, 5.0);
+    p2.position.set(1.2, 0.5, -1);
+    scene.add(p2);
+
+    // Orbit controls fallback
+    new OrbitControls(camera, renderer.domElement);
+
+    // VR button
+    document.body.appendChild(VRButton.createButton(renderer));
+
+    // Resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Clock + animation
+    const clock = new THREE.Clock();
+    let textMesh = null;
+
+    // Load font + create text
+    const loader = new FontLoader();
+    loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', font => {
+      const textGeo = new TextGeometry("Nidhi I love you", {
+        font: font,
+        size: 0.3,
+        height: 0.05,
+        bevelEnabled: true,
+        bevelThickness: 0.01,
+        bevelSize: 0.02
       });
-    </script>
-  </body>
+      const textMat = new THREE.MeshStandardMaterial({ color: 0xff3366, emissive: 0x220011 });
+      textMesh = new THREE.Mesh(textGeo, textMat);
+      textMesh.position.set(0, 1.6, -10); // start far away
+      scene.add(textMesh);
+    });
+
+    // Animate loop
+    renderer.setAnimationLoop(() => {
+      const t = clock.getElapsedTime();
+
+      // Heart bobbing + pulse
+      group.position.y = 1.2 + Math.sin(t * 1.5) * 0.08;
+      const beat = 1 + Math.abs(Math.sin(t*3.5)) * 0.08;
+      group.scale.set(beat, beat, beat);
+      group.rotation.y += 0.005;
+      rim.material.opacity = 0.18 + 0.06 * Math.sin(t*2.5);
+
+      // Animate text flying toward viewer
+      if (textMesh) {
+        if (textMesh.position.z < -1.5) {
+          textMesh.position.z += 0.15; // fast approach
+        } else {
+          // stop + pulse effect near you
+          const pulse = 1 + Math.sin(t*4)*0.1;
+          textMesh.scale.set(pulse, pulse, pulse);
+        }
+      }
+
+      renderer.render(scene, camera);
+    });
+  </script>
+</body>
 </html>
