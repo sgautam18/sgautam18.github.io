@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "year": 2024,
+    "source": "collegebatch.com (NEET PG 2024 Question Paper with Answer PDF)",
+    "question": "Male not responding to O2, diagnosis ARDS. What is the role of IL-8 in ARDS?",
+    "options": [
+      "Endothelial cell activation",
+      "Requirement of neutrophil",
+      "Macrophage activation",
+      "Promote surfactant production"
+    ],
+    "answer": "Requirement of neutrophil"
+  },
+  {
+    "id": 2,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "A patient presents with the finding as shown. What is the best investigation for Wilson?",
+    "options": [
+      "Urine Copper",
+      "Hepatic copper",
+      "Serum Ceruloplasmin",
+      "MRI Brain"
+    ],
+    "answer": "Hepatic copper"
+  },
+  {
+    "id": 3,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Which tumor is positive for TTF-1?",
+    "options": [
+      "Squamous cell",
+      "Small cell",
+      "Adenocarcinoma",
+      "Carcinoid"
+    ],
+    "answer": "Adenocarcinoma"
+  },
+  {
+    "id": 4,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Vitamin to be supplemented after gastrectomy?",
+    "options": [
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin B12",
+      "Vitamin D"
+    ],
+    "answer": "Vitamin B12"
+  },
+  {
+    "id": 5,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "10/m presents with cervical lymph node+, surface Ig+, CD34-, TdT-, CD10+, CD19+: which is the diagnosis?",
+    "options": [
+      "Burkitt's Lymphoma",
+      "DLBCL",
+      "Anaplastic",
+      "B-ALL"
+    ],
+    "answer": "Burkitt's Lymphoma"
+  },
+  {
+    "id": 6,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Most common mutation in Papillary cell carcinoma?",
+    "options": [
+      "BRAF V600E",
+      "RET",
+      "MET",
+      "RAS"
+    ],
+    "answer": "BRAF V600E"
+  },
+  {
+    "id": 7,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Renal mass, haematuria, flank pain: which is the likely tumor?",
+    "options": [
+      "Clear cell",
+      "Papillary",
+      "Chromophobe",
+      "Bellini"
+    ],
+    "answer": "Chromophobe"
+  },
+  {
+    "id": 8,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Which disease will show the following mode of inheritance? (options given)",
+    "options": [
+      "Wiskott",
+      "Wilson",
+      "Prader-Willi",
+      "Achondroplasia"
+    ],
+    "answer": "Wiskott"
+  },
+  {
+    "id": 9,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Young male died during exercise; on gross morphology septal thickening seen. Most common cause of death?",
+    "options": [
+      "DCM",
+      "RCM",
+      "HOCM",
+      "Viral Myocarditis"
+    ],
+    "answer": "HOCM"
+  },
+  {
+    "id": 10,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Which statement is not true regarding von Willebrand disease?",
+    "options": [
+      "VWD type 1 is mostly severe disease in children",
+      "VWD type 3 is mostly severe disease in children",
+      "VWD type 2 is more related to activity rather than levels",
+      "VWD type 3 has severely low VWF"
+    ],
+    "answer": "VWD type 1 is mostly severe disease in children"
+  },
+  {
+    "id": 11,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Child sunlight causes eruptions — DNA repair defect: which defect?",
+    "options": [
+      "Nucleotide excision",
+      "Base excision repair",
+      "Mismatch repair defect",
+      "Recombination defect"
+    ],
+    "answer": "Nucleotide excision"
+  },
+  {
+    "id": 12,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "18/M with hepatosplenomegaly, Hb7 gm%, LN+, WBC50K, Platelets30K, petechiae — most appropriate management?",
+    "options": [
+      "Cytarabine + ...",
+      "IVIG x 2 days",
+      "Prednisolone + Vinblastine",
+      "Radiotherapy to LN"
+    ],
+    "answer": "Prednisolone + Vinblastine"
+  },
+  {
+    "id": 13,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "A baby failed to pass meconium; which layers' structures are absent in the disease?",
+    "options": [
+      "Epithelial & Submucosa",
+      "Submucosa & Muscular",
+      "Muscular & Serosa",
+      "Epithelial & Serosa"
+    ],
+    "answer": "Submucosa & Muscular"
+  },
+  {
+    "id": 14,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Muscle responsible for ptosis in Horner syndrome:",
+    "options": [
+      "Orbicularis oculi",
+      "Levator palpebrae",
+      "Horner muscle",
+      "Muller's muscle"
+    ],
+    "answer": "Muller's muscle"
+  },
+  {
+    "id": 15,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Patient presented after 3 years of cataract surgery with slit lamp finding — likely diagnosis?",
+    "options": [
+      "Posterior capsular opacification (PCO)",
+      "Bullous keratopathy",
+      "Phakic glaucoma",
+      "Lens subluxation"
+    ],
+    "answer": "Posterior capsular opacification (PCO)"
+  },
+  {
+    "id": 16,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Following perimetry image is suggestive of:",
+    "options": [
+      "Extension of blind spot",
+      "Arcuate scotoma",
+      "Renee step defect",
+      "Altitudinal anopia"
+    ],
+    "answer": "Extension of blind spot"
+  },
+  {
+    "id": 17,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "A patient came with nyctalopia; diagnosis?",
+    "options": [
+      "Retinitis pigmentosa",
+      "Vitamin A deficiency",
+      "Retinal detachment",
+      "Diabetic retinopathy"
+    ],
+    "answer": "Retinitis pigmentosa"
+  },
+  {
+    "id": 18,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Patient was shown images A and B; image C was visualised. Likely diagnosis?",
+    "options": [
+      "Left eye suppression",
+      "Right eye suppression",
+      "Crossed diplopia",
+      "Uncrossed diplopia"
+    ],
+    "answer": "Right eye suppression"
+  },
+  {
+    "id": 19,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "A patient presents in eye OPD with this finding — diagnosis?",
+    "options": [
+      "Dermoid",
+      "Lipodermoid",
+      "Pterygium",
+      "Papilloma"
+    ],
+    "answer": "Dermoid"
+  },
+  {
+    "id": 20,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "In Wilson disease, best choice of investigation is?",
+    "options": [
+      "Serum copper",
+      "Ceruloplasmin",
+      "Hepatic copper estimation",
+      "Urine copper"
+    ],
+    "answer": "Ceruloplasmin"
+  },
+  {
+    "id": 21,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Clinical scenario about homocystinuria — which vitamin to be supplemented?",
+    "options": [
+      "Thiamine",
+      "Vitamin B6",
+      "Biotin",
+      "Pyruvate"
+    ],
+    "answer": "Vitamin B6"
+  },
+  {
+    "id": 22,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "2-week-old baby with vomiting, acidosis, early cataract — which enzyme defective?",
+    "options": [
+      "Galactose-1-phosphate uridyl transferase",
+      "Galactokinase",
+      "Hexokinase",
+      "Aldose reductase"
+    ],
+    "answer": "Galactose-1-phosphate uridyl transferase"
+  },
+  {
+    "id": 23,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Diagnosis of MRI image:",
+    "options": [
+      "Arnold Chiari malformation",
+      "Corpus callosal agenesis",
+      "Vein of Galen malformation",
+      "Dandy Walker malformation"
+    ],
+    "answer": "Arnold Chiari malformation"
+  },
+  {
+    "id": 24,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "76-year-old on aspirin with minor trauma 3 weeks back; NCCT shows below — diagnosis?",
+    "options": [
+      "SAH",
+      "EDH",
+      "Normal Study",
+      "Chronic SDH"
+    ],
+    "answer": "Chronic SDH"
+  },
+  {
+    "id": 25,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Diagnosis of MRCP image:",
+    "options": [
+      "Gallbladder stone",
+      "Cholangiocarcinoma",
+      "Choledochal cyst",
+      "Gall and bile duct cancer"
+    ],
+    "answer": "Cholangiocarcinoma"
+  },
+  {
+    "id": 26,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "35-year-old nullipara with adnexal mass MRI T1 hyperintense, T2 low signal with dark shading — diagnosis?",
+    "options": [
+      "Dermoid cyst",
+      "Endometrioma",
+      "Ovarian cancer",
+      "Para ovarian cyst"
+    ],
+    "answer": "Endometrioma"
+  },
+  {
+    "id": 27,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Diagnosis of plain X-ray abdomen showing features — likely?",
+    "options": [
+      "Enterolith in jejunum",
+      "Calcific mediastinal lymph nodes",
+      "Horseshoe kidney with calculi",
+      "Chronic calcific pancreatitis"
+    ],
+    "answer": "Chronic calcific pancreatitis"
+  },
+  {
+    "id": 28,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Proteus infection leading to bladder stone — stone composition?",
+    "options": [
+      "Calcium phosphate",
+      "Cysteine",
+      "Calcium oxalate",
+      "Xanthine"
+    ],
+    "answer": "Calcium phosphate"
+  },
+  {
+    "id": 29,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Correct statement regarding esophageal foreign body:",
+    "options": [
+      "Right main bronchus is one site of constriction",
+      "Most common site of impaction is cricopharyngeus",
+      "Commonly seen in adults",
+      "Can't cause mediastinitis"
+    ],
+    "answer": "Most common site of impaction is cricopharyngeus"
+  },
+  {
+    "id": 30,
+    "year": 2024,
+    "source": "collegebatch.com",
+    "question": "Gastrectomy patient needs supplemental which vitamin?",
+    "options": [
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin B12",
+      "Vitamin A"
+    ],
+    "answer": "Vitamin B12"
+  }
+]
