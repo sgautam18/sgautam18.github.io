@@ -8,5 +8,5 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true
   },
-  base: '/',   // 👈 user/organization site = root
+  base: './',   // 👈 user/organization site = root
 })
