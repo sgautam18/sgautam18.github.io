@@ -8,5 +8,5 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true
   },
-  base: 'sgautam18.github.io',   // 👈 important for GitHub Pages
+  base: '/',   // 👈 user/organization site = root
 })
