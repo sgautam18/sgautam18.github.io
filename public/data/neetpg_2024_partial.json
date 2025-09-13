@@ -1,0 +1,32 @@
+[
+  {
+    "id": "2024_001",
+    "year": 2024,
+    "shift": "Morning",
+    "question": "A 60-year-old male with history of hypertension presents with acute chest pain radiating to the left arm. ECG shows ST elevation in leads II, III, and aVF. What is the most likely diagnosis?",
+    "options": [
+      "Anterior wall MI",
+      "Inferior wall MI",
+      "Lateral wall MI",
+      "Posterior wall MI"
+    ],
+    "answer": "Inferior wall MI",
+    "explanation": "ST elevation in leads II, III, and aVF suggests inferior wall myocardial infarction.",
+    "image": null
+  },
+  {
+    "id": "2024_002",
+    "year": 2024,
+    "shift": "Morning",
+    "question": "A 25-year-old woman presents with fever, dysuria, and flank pain. Urine culture shows E. coli. Which antibiotic is the best empirical choice?",
+    "options": [
+      "Amoxicillin",
+      "Nitrofurantoin",
+      "Ciprofloxacin",
+      "Ceftriaxone"
+    ],
+    "answer": "Ceftriaxone",
+    "explanation": "In acute pyelonephritis with systemic signs, parenteral ceftriaxone is recommended as empirical therapy.",
+    "image": null
+  }
+]
